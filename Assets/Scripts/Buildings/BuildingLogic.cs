@@ -17,8 +17,7 @@ public class BuildingLogic : MonoBehaviour{
     item.SetCurrentDuration();
     currentDuration = item.currentDuration;
     currentGoldPerDuration = item.currentPrice;
-
-    GenerateGold(cts);
+    
   }
   
   private void Awake(){
@@ -40,33 +39,14 @@ public class BuildingLogic : MonoBehaviour{
 
 
   
-  public async UniTask GenerateGold(CancellationTokenSource cts){
-    while (true && buildingUnlocked){
 
-      await UniTask.Delay(TimeSpan.FromSeconds(currentDuration),cancellationToken: cts.Token);
-     
-      if (goldContainer != null){
-        currentGoldPerDuration = item.currentPrice;
-        goldContainer.AddGold(currentGoldPerDuration);
-#if UNITY_EDITOR
-        Debug.Log($"{currentGoldPerDuration} item: {GetType().Name}");
-#endif
-      }
-      else{
-#if UNITY_EDITOR
-        Debug.LogError($"Gold container null in {GetType().Name}");
-#endif
-      }
-      
-    }
-  }
 
 
   public void Unlock(ItemSO item){
     buildingUnlocked = true;
     BuildingUiManager.Instance.SetUnlockedUI(item);
     BuildingLogicManagerV2.Instace.SpawnNextItem(item);
-    GenerateGold(cts);
+
   }
 
 
@@ -78,8 +58,7 @@ public class BuildingLogic : MonoBehaviour{
     }
     currentDuration /= 2;
     speedUp = true;
-    cts = new CancellationTokenSource();
-    GenerateGold(cts);
+
   }
 
 

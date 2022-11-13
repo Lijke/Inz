@@ -33,8 +33,10 @@ public class BuildingUiItem : MonoBehaviour{
 	private CancellationTokenSource cts = new CancellationTokenSource();
 	private void Awake(){
 		GameEvents.onLevelUp += ResetUi;
+	}
 
-		
+	private void OnDestroy(){
+		cts.Cancel();
 	}
 
 	public void ResetUi(ItemSO itemSo){
@@ -79,13 +81,21 @@ public class BuildingUiItem : MonoBehaviour{
 		currentTimer = 0;
 		maxTime = timer;
 		working = true;
+#if UNITY_EDITOR
+		Debug.Log($"$start generating money {item.itemName}");
+#endif
 		while (working && !cts.IsCancellationRequested){
+
 			var fillAmmount = currentTimer / maxTime;
 			slider.fillAmount = fillAmmount;
 			currentTimer += Time.deltaTime;
 			await UniTask.NextFrame();
 			if (currentTimer > maxTime){
 				currentTimer = 0;
+#if UNITY_EDITOR
+				Debug.Log($"Finish {item.itemName}");
+				GoldContainer.Instance.AddGold(item.currentPrice);
+#endif
 			}
 		}
 	}
