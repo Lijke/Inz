@@ -9,6 +9,7 @@ public class GameInit : MonoBehaviour{
 
 
     private void LoadData(){
+        goldContainer.goldMultiplayer = 1;
         GamePrefs data = SaveSystem.LoadPrefs();
         goldContainer.currentGold = data.GetEarnedGold();
     }

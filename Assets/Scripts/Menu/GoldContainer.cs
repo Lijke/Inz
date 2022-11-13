@@ -10,17 +10,14 @@ public class GoldContainer : ScriptableObject{
     public float currentPremiumCurrency;
     public static GoldContainer Instance;
     public float goldMultiplayer;
-
-    private void Awake(){
-        goldMultiplayer = 1;
-    }
-
+    
+    
     public void AddGold(float gold){
         if (goldMultiplayer == 0){
             goldMultiplayer = 1;
         }
 #if UNITY_EDITOR
-        Debug.Log($"golda added : {gold}");
+        Debug.Log($"golda added : {gold} gold multiplayer {goldMultiplayer}");
 #endif
         currentGold += gold*goldMultiplayer;
         GamePrefs.statisticInfo.goldCount += currentGold;
@@ -54,5 +51,10 @@ public class GoldContainer : ScriptableObject{
     public void AddPremiumCurrency(int givenAmmount){
         currentPremiumCurrency += givenAmmount;
         UiGoldManager.Instance.UpdateText(TypeOfGold.premium, currentPremiumCurrency.ToString());
+    }
+
+
+    public void SubstractPremiumVal(float cost){
+        currentPremiumCurrency -= cost;
     }
 }

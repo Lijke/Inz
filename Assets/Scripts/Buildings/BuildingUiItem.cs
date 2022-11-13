@@ -33,6 +33,7 @@ public class BuildingUiItem : MonoBehaviour{
 	private CancellationTokenSource cts = new CancellationTokenSource();
 	private void Awake(){
 		GameEvents.onLevelUp += ResetUi;
+	
 	}
 
 	private void OnDestroy(){

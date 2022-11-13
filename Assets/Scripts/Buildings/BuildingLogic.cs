@@ -30,7 +30,7 @@ public class BuildingLogic : MonoBehaviour{
   
   public void SetupBuildingUi(bool isUnlocked){
     buildingUnlocked = isUnlocked;
-    BuildingUiManager.Instance.SetupNextItem(item, isUnlocked, currentDuration, this);
+    BuildingUiManager.Instance.SetupNextItem(item, isUnlocked, this);
   }
 
   private void UpdateDurationTime(ItemSO itemSo){
@@ -71,6 +71,7 @@ public class BuildingLogic : MonoBehaviour{
   public void BackToNormal(){
     currentDuration *= 2;
     speedUp = false;
+    cts = new CancellationTokenSource();
   }
 
   [Button()]

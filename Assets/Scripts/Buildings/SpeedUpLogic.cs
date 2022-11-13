@@ -9,7 +9,7 @@ public class SpeedUpLogic : MonoBehaviour{
 	[SerializeField] private float boostTime;
 	[SerializeField] private float cost;
 	public TextMeshProUGUI adCost_TMP;
-
+	public GoldContainer goldContainer;
 	private void Awake(){
 		adCost_TMP.text = cost.ToString();
 	}
@@ -18,9 +18,12 @@ public class SpeedUpLogic : MonoBehaviour{
 	public void ButtonSpeedUp(){
 		if (GoldContainer.Instance.CanBuyByPremium(cost)){
 			SpeedUp();
+			GoldContainer.Instance.goldMultiplayer = 2;
 			GameEvents.EventStarted(AdEventType.SpeedUp, boostTime);
+			GoldContainer.Instance.SubstractPremiumVal(cost);
 		}
-	
+
+		
 	}
 
 
@@ -36,6 +39,7 @@ public class SpeedUpLogic : MonoBehaviour{
 	public void SpeedUpFinish(){
 		foreach (var building in buildingLogicManager.activeItemsPrefabs){
 			building.BackToNormal();
+			GoldContainer.Instance.goldMultiplayer = 1;
 		}
 
 		BuildingUiManager.Instance.BackToNormalAllBuildings();

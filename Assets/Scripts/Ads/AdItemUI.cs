@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
@@ -7,7 +8,11 @@ using UnityEngine;
 public class AdItemUI : MonoBehaviour{
 	
 	public TextMeshProUGUI timer_TMP;
-	
+
+	private void Awake(){
+		Disable();
+	}
+
 	public async UniTaskVoid StartCountingTime(float totalTime){
 		float timer = totalTime;
 		while (timer > 0){
@@ -21,5 +26,10 @@ public class AdItemUI : MonoBehaviour{
 
 	public void Disable(){
 		gameObject.SetActive(false);
+	}
+
+
+	public void Enable(){
+		gameObject.SetActive(true);
 	}
 }

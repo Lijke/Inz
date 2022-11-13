@@ -34,7 +34,7 @@ public class StatisticDetails : MonoBehaviour{
             var objScript = rowObj.GetComponent<ItemRow>();
             string data;
             categoryMenuOptions.StringStringDictionary.TryGetValue(enumType.ToString(), out data);
-            objScript.name.text = data;
+            objScript.itemName.text = data;
             objScript.LoadValue(enumType);
         }
     }

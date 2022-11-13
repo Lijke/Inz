@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14192e194cacab047b005c0ce14a8d14, type: 3}
   m_Name: GoldContainerSo
   m_EditorClassIdentifier: 
-  currentGold: 250
+  currentGold: 800
   currentPremiumCurrency: 15
   goldMultiplayer: 1

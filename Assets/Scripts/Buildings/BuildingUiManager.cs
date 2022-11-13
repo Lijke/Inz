@@ -18,13 +18,13 @@ public class BuildingUiManager : MonoBehaviour{
       }
    }
    
-   public void SetupNextItem(ItemSO item, bool unlocked, float currentDuration, BuildingLogic buildingLogic){
+   public void SetupNextItem(ItemSO item, bool unlocked , BuildingLogic buildingLogic){
       var obj = Instantiate(buildingPrefab, spawnTransform);
       var objScript = obj.GetComponent<BuildingUiItem>();
       spawnedBuildingsUI.Add(objScript);
       objScript.item = item;
       BuildingStatus status = unlocked ? BuildingStatus.Unlocked : BuildingStatus.Lock;
-      objScript.SetupStatus(status, currentDuration);
+      objScript.SetupStatus(status, item.currentDuration);
       objScript.InitLogic(buildingLogic);
    }
 
