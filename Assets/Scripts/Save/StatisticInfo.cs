@@ -1,8 +1,9 @@
 public class StatisticInfo{
-   public int buildingUpgradeCount;
-   public int buildingDelayUpgradeCount;
-   public int goldCount;
-   public int adsPopout;
-   public float totalTimeInGame;
+   public int buildingUpgradeCount=0;
+   public int buildingDelayUpgradeCount=0;
+   public float goldCount=0;
+   public int adsPopout=0;
+   public float totalTimeInGame=0;
+   
    
 }

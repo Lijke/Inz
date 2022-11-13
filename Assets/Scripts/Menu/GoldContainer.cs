@@ -19,10 +19,12 @@ public class GoldContainer : ScriptableObject{
         if (goldMultiplayer == 0){
             goldMultiplayer = 1;
         }
+        
         currentGold += gold*goldMultiplayer;
         #if UNITY_EDITOR    
         Debug.Log(currentGold);
         #endif
+        GamePrefs.statisticInfo.goldCount += currentGold;
         GameEvents.AddGold();
         UiGoldManager.Instance.UpdateText(TypeOfGold.gold, currentGold.ToString());
     }

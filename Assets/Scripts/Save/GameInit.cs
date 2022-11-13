@@ -5,8 +5,6 @@ public class GameInit : MonoBehaviour{
 
     private void Awake(){
         LoadData();
-        
-        
     }
 
 

@@ -7,20 +7,35 @@ using UnityEngine;
 public class StatisticDetails : MonoBehaviour{
     public GameObject rowPrefab;
     public CategoryMenuOptions categoryMenuOptions;
+    private List<GameObject> spawnedItems = new List<GameObject>();
+    
 
-
-    private void Awake(){
+    private void OnEnable(){
         LoadDetails();
     }
 
+    private void OnDisable(){
+        RemoveAllItems();
+    }
+
+
+    private void RemoveAllItems(){
+        foreach (var item in spawnedItems){
+            DestroyImmediate(item);
+        }
+    }
+
+
     public void LoadDetails(){
         var enumTypes = Enum.GetValues(typeof(CategoryType));
-        foreach (var enumType in enumTypes){
+        foreach (CategoryType enumType in enumTypes){
             var rowObj = Instantiate(rowPrefab, transform);
+            spawnedItems.Add(rowObj);
             var objScript = rowObj.GetComponent<ItemRow>();
             string data;
             categoryMenuOptions.StringStringDictionary.TryGetValue(enumType.ToString(), out data);
             objScript.name.text = data;
+            objScript.LoadValue(enumType);
         }
     }
 }

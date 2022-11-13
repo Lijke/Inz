@@ -35,6 +35,7 @@ public class UpgradeDurationUi : MonoBehaviour{
          return;
       }
       if (goldContainer.GetCurrentGold() > item.upgradeDurationSO.GetNextDurationCost(item.baseCost) ){
+         GamePrefs.statisticInfo.buildingDelayUpgradeCount++;
          var cost = item.upgradeDurationSO.GetNextDurationCost(item.baseCost);
          goldContainer.SubstractGold(cost);
          //koszt ulepszenie zwiększany
