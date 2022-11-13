@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72ae7df2baae564bbed70b0b2cacbdd, type: 3}
+  m_Name: ItemSO
+  m_EditorClassIdentifier: 
+  currentPrice: 100
+  currentDuration: 30
+  currentBonus: 1
+  currentLevel: 2
+  nextBonusLevel: 100
+  itemName: Food Truck
+  description: "Food truck \u2013 furgonetka b\u0119d\u0105ca punktem sprzeda\u017Cy
+    jedzenia, zwykle zaliczanego"
+  baseCost: 50
+  index: 0
+  upgradeDurationSO: {fileID: 11400000, guid: 43ea649c80f4b644ca0b3367aad32d82, type: 2}
+  maxLevelReached: 0

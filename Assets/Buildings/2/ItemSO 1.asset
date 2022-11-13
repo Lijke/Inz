@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72ae7df2baae564bbed70b0b2cacbdd, type: 3}
+  m_Name: ItemSO 1
+  m_EditorClassIdentifier: 
+  currentPrice: 300
+  currentDuration: 30
+  currentBonus: 1
+  currentLevel: 3
+  nextBonusLevel: 100
+  itemName: Pizzeria
+  description: "Pizza \u2013 potrawa kuchni w\u0142oskiej, obecnie szeroko rozpowszechniona
+    na ca\u0142ym \u015Bwiecie. Jest to p\u0142aski placek z ciasta dro\u017Cd\u017Cowego,
+    z sosem pomidorowym, posypany tartym serem i zio\u0142ami, pieczony w bardzo
+    mocno nagrzanym piecu. Pizz\u0119 podaje si\u0119 na gor\u0105co, lecz rozpowszechnione
+    jest jedzenie jej r\xF3wnie\u017C na zimno"
+  baseCost: 100
+  index: 0
+  upgradeDurationSO: {fileID: 11400000, guid: 8948bf2c6738c1244b8ef0eae836a1c7, type: 2}
+  maxLevelReached: 0
