@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeHeader: "Ulepszy aby zarobi\u0107 wi\u0119cej"
   upgradeDescription: "Ulepszy aby zarobi\u0107 wi\u0119cej!!!!"
-  upgradeImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  upgradeImage: {fileID: 21300000, guid: 0e4f7e0b693687e4c967a851c12d3413, type: 3}
   expectedLevel: 64000000f4010000e8030000d0070000b80b0000a00f000088130000
   currentExpectedLevel: 0
   durationTime: 1e0000001e00000019000000140000000f0000000a00000005000000

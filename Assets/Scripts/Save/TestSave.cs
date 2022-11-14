@@ -5,6 +5,12 @@ public class TestSave : MonoBehaviour{
 
 	[Button()]
 	public void SaveData(){
-		SaveSystem.SaveData(new GamePrefs(500));
+		var prefs = GamePrefs.GetInstance();
+		SaveSystem.SaveData(new GamePrefs(
+			prefs.buildingUpgradeCount,
+			prefs.buildingDelayUpgradeCount,
+			prefs.goldCount, 
+			prefs.adsPopout,
+			prefs.totalTimeInGame));
 	}
 }

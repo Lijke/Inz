@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class UpgradeDurationUi : MonoBehaviour{
    public TextMeshProUGUI header;
    public TextMeshProUGUI description; 
-   public Image upgradeItem;
    public TextMeshProUGUI buttonText;
    private ItemSO item;
    private GoldContainer goldContainer;
@@ -24,7 +23,6 @@ public class UpgradeDurationUi : MonoBehaviour{
    public void SetUpgrade(){
       header.text = item.upgradeDurationSO.upgradeHeader;
       description.text = item.upgradeDurationSO.upgradeDescription;
-      upgradeItem.sprite = item.upgradeDurationSO.upgradeImage;
       buttonText.text = item.upgradeDurationSO.GetNextDurationCost(baseCost).ToString();
    }
 
@@ -35,7 +33,7 @@ public class UpgradeDurationUi : MonoBehaviour{
          return;
       }
       if (goldContainer.GetCurrentGold() > item.upgradeDurationSO.GetNextDurationCost(item.baseCost) ){
-         GamePrefs.statisticInfo.buildingDelayUpgradeCount++;
+         GamePrefs.GetInstance().buildingDelayUpgradeCount++;
          var cost = item.upgradeDurationSO.GetNextDurationCost(item.baseCost);
          goldContainer.SubstractGold(cost);
          //koszt ulepszenie zwiększany

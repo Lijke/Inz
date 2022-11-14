@@ -10,19 +10,19 @@ public class ItemRow : MonoBehaviour{
    public void LoadValue(CategoryType categoryType){
       switch (categoryType){
          case CategoryType.Gold:
-            SetText(GamePrefs.statisticInfo.goldCount.ToString());
+            SetText(GamePrefs.GetInstance().goldCount.ToString());
             break;
          case CategoryType.AdsPopout:
-            SetText(GamePrefs.statisticInfo.adsPopout.ToString());
+            SetText(GamePrefs.GetInstance().adsPopout.ToString());
             break;
          case CategoryType.BuildingUpgrade:
-            SetText(GamePrefs.statisticInfo.buildingUpgradeCount.ToString());
+            SetText(GamePrefs.GetInstance().buildingUpgradeCount.ToString());
             break;
          case CategoryType.BuildingDelayUpgrade:
-            SetText(GamePrefs.statisticInfo.buildingDelayUpgradeCount.ToString());
+            SetText(GamePrefs.GetInstance().buildingDelayUpgradeCount.ToString());
             break;
          case CategoryType.TotalTimeInGame:
-            SetText(Mathf.Round(GamePrefs.statisticInfo.totalTimeInGame).ToString());
+            SetText(Mathf.Round(GamePrefs.GetInstance().totalTimeInGame).ToString());
             break;
       }
    }

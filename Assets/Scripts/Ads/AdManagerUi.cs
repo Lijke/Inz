@@ -11,7 +11,7 @@ public class AdManagerUi : MonoBehaviour{
 	}
 	
 	public void StartCountingTime(AdEventType adeventtype, float totalTime){
-		GamePrefs.statisticInfo.adsPopout++;
+		GamePrefs.GetInstance().adsPopout++;
 		adsUiObjects[(int)adeventtype].Enable();
 		adsUiObjects[(int)adeventtype].StartCountingTime(totalTime);
 

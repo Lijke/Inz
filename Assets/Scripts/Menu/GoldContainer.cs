@@ -20,7 +20,7 @@ public class GoldContainer : ScriptableObject{
         Debug.Log($"golda added : {gold} gold multiplayer {goldMultiplayer}");
 #endif
         currentGold += gold*goldMultiplayer;
-        GamePrefs.statisticInfo.goldCount += currentGold;
+        GamePrefs.GetInstance().goldCount += currentGold;
         GameEvents.AddGold();
         UiGoldManager.Instance.UpdateText(TypeOfGold.gold, currentGold.ToString());
     }

@@ -24,7 +24,7 @@ public class ItemSO : ScriptableObject{
 
     public void LevelUp(){
         currentLevel += 1;
-        GamePrefs.statisticInfo.buildingUpgradeCount++;
+        GamePrefs.GetInstance().buildingUpgradeCount++;
         UpgradeGoldPerDuration();
         GameEvents.LevelUp(this);
     }
